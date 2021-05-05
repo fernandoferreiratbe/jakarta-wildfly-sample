@@ -18,6 +18,11 @@ public class AgendamentoEmailServico {
 	private AgendamentoEmailDAO dao;
 	
 	public List<AgendamentoEmail> listar() {
-		return dao.listar();
+		return this.dao.listar();
+	}
+	
+	public void inserir(AgendamentoEmail agendamentoEmail) {
+		agendamentoEmail.setAgendado(false);
+		this.dao.inserir(agendamentoEmail);
 	}
 }
