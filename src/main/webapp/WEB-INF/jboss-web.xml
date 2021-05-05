@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Path to put it: src/webapp/WEB-INF/jboss-web.xml -->
+
+<!DOCTYPE xml>
+<jboss-web>
+	<context-root>agendamento</context-root>
+</jboss-web>
