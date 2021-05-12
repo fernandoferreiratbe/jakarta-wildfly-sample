@@ -3,13 +3,13 @@ package io.github.fernandoferreira.job;
 import java.util.List;
 
 import javax.ejb.Schedule;
-import javax.ejb.Stateless;
+import javax.ejb.Singleton;
 import javax.inject.Inject;
 
 import io.github.fernandoferreira.entidade.AgendamentoEmail;
 import io.github.fernandoferreira.servico.AgendamentoEmailServico;
 
-@Stateless
+@Singleton
 public class AgendamentoEmailJob {
 	
 	@Inject
