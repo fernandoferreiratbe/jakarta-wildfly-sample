@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.inject.Inject;
 
 import io.github.fernandoferreira.dao.AgendamentoEmailDAO;
@@ -33,9 +35,13 @@ public class AgendamentoEmailServico {
 		return this.dao.listarPorNaoAgendado();
 	}
 	
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public void alterar(AgendamentoEmail agendamentoEmail) {
-		agendamentoEmail.setAgendado(true);
+		if (agendamentoEmail.getEmail().equals("fernando@me.com.uk")) {
+			throw new RuntimeException("Nao foi possivel enviar o email para -> " + agendamentoEmail.getEmail());
+		}
 		
+		agendamentoEmail.setAgendado(true);
 		this.dao.alterar(agendamentoEmail);
 	}
 	
