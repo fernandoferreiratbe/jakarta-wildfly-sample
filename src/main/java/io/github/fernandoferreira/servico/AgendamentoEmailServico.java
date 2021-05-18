@@ -35,9 +35,8 @@ public class AgendamentoEmailServico {
 		return this.dao.listarPorNaoAgendado();
 	}
 	
-	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public void alterar(AgendamentoEmail agendamentoEmail) {
-		if (agendamentoEmail.getEmail().equals("fernando@me.com.uk")) {
+		if (agendamentoEmail.getEmail().equals("mary@me.com.uk")) {
 			throw new RuntimeException("Nao foi possivel enviar o email para -> " + agendamentoEmail.getEmail());
 		}
 		
